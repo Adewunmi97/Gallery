@@ -1,16 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Photos" %>
-
 <h1>Photos</h1>
 
-<div id="photos">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 1rem;">
   <% @photos.each do |photo| %>
-    <%= render photo %>
-    <p>
-      <%= link_to "Show this photo", photo %>
-    </p>
+    <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; padding: 10px;">
+      <% if photo.image.attached? %>
+        <%= image_tag photo.image.variant(resize_to_limit: [400, 300]), style: "width: 100%; height: auto; border-radius: 6px;", loading: "lazy", alt: photo.title %>
+      <% end %>
+
+      <h3><strong>Title:</strong> <%= photo.title %></h3>
+      <p><strong>Description:</strong> <%= photo.description %></p>
+      <p><strong>Tags:</strong> <%= photo.tags if photo.tags.present? %></p>
+      <p><%= link_to "Show this photo", photo %></p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New photo", new_photo_path %>
