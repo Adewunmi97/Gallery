@@ -65,3 +65,5 @@ end
 gem 'cloudinary'
 gem 'activestorage-cloudinary-service'
 gem 'activestorage-validator'
+gem 'active_storage_validations'
+gem "image_processing", "~> 1.2"

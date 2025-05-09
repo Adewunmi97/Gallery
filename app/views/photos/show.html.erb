@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @photo %>
+<% if @photo.image.attached? %>
+  <%= image_tag @photo.image.variant(resize_to_limit: [600, 400]) %>
+<% end %>
+<p><strong>Tags:</strong> <%= @photo.tags %></p>
 
 <div>
   <%= link_to "Edit this photo", edit_photo_path(@photo) %> |
