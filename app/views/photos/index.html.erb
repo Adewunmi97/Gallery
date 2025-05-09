@@ -1,4 +1,6 @@
-<p class="notice-message"><%= notice %></p>
+<% if notice.present? %>
+  <p class="notice-message"><%= notice %></p>
+<% end %>
 
 <h1 class="heading">Photos</h1>
 
