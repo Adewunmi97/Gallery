@@ -1,0 +1,56 @@
+.photo-show {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.photo-image {
+  max-width: 50%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.photo-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button-link {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.button-link:hover {
+  background-color: #0056b3;
+}
+
+.button-link.secondary {
+  background-color: #6c757d;
+}
+
+.button-link.secondary:hover {
+  background-color: #545b62;
+}
+
+.danger-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.danger-button:hover {
+  background-color: #bd2130;
+}

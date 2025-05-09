@@ -1,14 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice-message"><%= notice %></p>
 
-<% if @photo.image.attached? %>
-  <%= image_tag @photo.image.variant(resize_to_limit: [400, 300]) %>
-<% end %>
-<p><strong>Tags:</strong> <%= @photo.tags %></p>
+<div class="photo-show">
+  <% if @photo.image.attached? %>
+    <%= image_tag @photo.image.variant(resize_to_limit: [400, 300]), class: "photo-image" %>
+  <% end %>
 
-<div>
-  <%= link_to "Edit this photo", edit_photo_path(@photo), class: "button-link" %> |
-  <%= link_to "Back to gallery", photos_path, class: "button-link" %>
+  <p><strong>Tags:</strong> <%= @photo.tags %></p>
 
-  <%= button_to "Destroy this photo", @photo, method: :delete %>
+  <div class="photo-actions">
+    <%= link_to "Edit this photo", edit_photo_path(@photo), class: "button-link" %>
+    <%= link_to "Back to gallery", photos_path, class: "button-link secondary" %>
+    <%= button_to "Destroy this photo", @photo, method: :delete, data: { confirm: "Are you sure?" }, class: "danger-button" %>
+  </div>
 </div>
-

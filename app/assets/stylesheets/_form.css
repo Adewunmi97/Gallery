@@ -1,0 +1,61 @@
+.photo-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0, 2px, 8px, rgba(0,0,0,0.1);
+  font-family: sans-serif;
+}
+
+.form_group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-block: 0.5rem;
+}
+
+.form-input {
+  width: 95%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.form-actions {
+  text-align: right;
+}
+
+.form-submit {
+  background-color: #007bff;
+  margin-top: 1.5rem;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-submit:hover {
+  background-color: #0056b3;
+}
+
+.form-errors {
+  border-left: 4px solid red;
+  background: #ffe6e6;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+}

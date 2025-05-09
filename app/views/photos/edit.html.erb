@@ -1,12 +1,12 @@
 <% content_for :title, "Editing photo" %>
 
-<h1>Editing photo</h1>
+<h1 class="heading">Editing photo</h1>
 
 <%= render "form", photo: @photo %>
 
 <br>
 
 <div>
-  <%= link_to "Show this photo", @photo, class: "button-link" %> |
-  <%= link_to "Back to photos", photos_path, class: "button-link" %>
+  <%= link_to "Show this photo", @photo, class: "button-link" %>
+  <%= link_to "Back to gallery", photos_path, class: "button-link secondary" %>
 </div>
