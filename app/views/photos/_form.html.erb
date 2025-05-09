@@ -1,8 +1,7 @@
-<%= form_with(model: photo, local: true, html: { multipart: true }) do |form| %>
+<%= form_with(model: photo, local: true, html: { multipart: true, class: "photo-form" }) do |form| %>
   <% if photo.errors.any? %>
-    <div style="color: red">
+    <div class="form-errors">
       <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
-
       <ul>
         <% photo.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,27 +10,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description %>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-input" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class: "form-input" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :tags, "Tags (comma-separated)" %>
-    <%= form.text_field :tags %>
+    <%= form.text_field :tags, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= form.submit "Save Photo", class: "form-submit" %>
   </div>
 <% end %>
