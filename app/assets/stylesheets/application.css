@@ -8,6 +8,9 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ body {
+  background-color: beige;
+ }
  .heading {
   text-align: center;
   text-transform: uppercase;
@@ -95,4 +98,30 @@
   padding: 1rem;
   margin-bottom: 1.5rem;
   border-radius: 6px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+a.button-link {
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+  font-weight: 500;
+}
+
+a.button-link:hover {
+  background-color: #0056b3;
 }

@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Photos</h1>
+<h1 class="heading">Photos</h1>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 1rem;">
   <% @photos.each do |photo| %>
@@ -12,8 +12,10 @@
       <h3><strong>Title:</strong> <%= photo.title %></h3>
       <p><strong>Description:</strong> <%= photo.description %></p>
       <p><strong>Tags:</strong> <%= photo.tags if photo.tags.present? %></p>
-      <p><%= link_to "Show this photo", photo %></p>
+      <p><%= link_to "Show this photo", photo, class: "button-link" %></p>
     </div>
   <% end %>
 </div>
+
+<%= link_to "New photo", new_photo_path, class: "button-link" %>
 
