@@ -1,12 +1,12 @@
 databases:
-  - name: alpha_blog1
-    databaseName: alpha_blog1
-    user: alpha_blog1
+  - name: gallery
+    databaseName: gallery
+    user: gallery
     plan: free
 
 services:
   - type: web
-    name: alpha_blog1
+    name: gallery
     runtime: ruby
     plan: free
     buildCommand: |
@@ -17,7 +17,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: alpha_blog1
+          name: gallery
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
