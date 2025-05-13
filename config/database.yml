@@ -81,10 +81,18 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['DATABASE_URL'] && URI.parse(ENV['DATABASE_URL']).path[1..-1] %>
+
+  cache:
+    <<: *primary_production
+    database: <%= ENV['DATABASE_URL'] %>
+    migrations_paths: db/cache_migrate
 
 cable:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
+  migrations_paths: db/cable_migrate 
 
 queue:
-  url: <%= ENV['QUEUE_DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  migrations_paths: db/queue_migrate
