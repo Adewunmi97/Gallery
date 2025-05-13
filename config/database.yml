@@ -79,17 +79,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: <%= ENV['DATABASE_NAME'] %>
-  username: <%= ENV['DATABASE_USER'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
 
-  cable:
-    adapter: postgresql
-    encoding: unicode
-    database: <%= ENV['DATABASE_NAME'] %>
-    username: <%= ENV['DATABASE_USER'] %>
-    password: <%= ENV['DATABASE_PASSWORD'] %>
-    host: <%= ENV['DATABASE_HOST'] %>
+cable:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
