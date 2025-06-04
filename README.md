@@ -1,4 +1,4 @@
-### 📸 Gallery
+# 📸 Gallery
 A simple photo gallery application built with Ruby on Rails and integrated with Cloudinary for image storage and management. This project allows users to upload, view, edit, and delete photos, with images stored securely on Cloudinary's free tier.
 
 🚀 Features
@@ -64,22 +64,22 @@ Ensure that all tests pass to confirm the application is functioning correctly.
 
 
 ## 📚 Resources
-Build a Photo Gallery in Rails with Cloudinary (Free Tier) - Medium
-Cloudinary Documentation
-Ruby on Rails Guides
+- Build a Photo Gallery in Rails with Cloudinary (Free Tier) - Medium
+- Cloudinary Documentation
+- Ruby on Rails Guides
 
 
 ## Video Presentation
 
 [Loom Link](https://www.loom.com/share/9d4a565f2ebb4519a52cbb7725e88aff?sid=0b01cd28-acb7-40e7-8a31-8ebbc1062320)
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome! To contribute:
-Fork the repository.
-Create a new branch: git checkout -b feature/your-feature-name
-Make your changes and commit them: git commit -m 'Add your feature'
-Push to the branch: git push origin feature/your-feature-name
-Open a pull request.
+- Fork the repository.
+- Create a new branch: git checkout -b feature/your-feature-name
+- Make your changes and commit them: git commit -m 'Add your feature'
+- Push to the branch: git push origin feature/your-feature-name
+- Open a pull request.
 
 ## 👤 Author
 Adewunmi A.
