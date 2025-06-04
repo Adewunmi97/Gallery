@@ -28,10 +28,10 @@ A simple photo gallery application built with Ruby on Rails and integrated with 
 
 
 ## 🔧 Installation
-Clone the repository: git clone https://github.com/Adewunmi97/Gallery.git
-cd Gallery
-Install dependencies:bundle install
-Set up the database:rails db:create, rails db:migrate
+- Clone the repository: git clone https://github.com/Adewunmi97/Gallery.git
+- run cd Gallery in your terminal
+- Install dependencies:bundle install
+- Set up the database:rails db:create, rails db:migrate
 
 ## Configure Cloudinary:
 - Add the cloudinary gem to your Gemfile: gem 'cloudinary'
