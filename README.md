@@ -1,101 +1,97 @@
-# README
+📸 Gallery
+A simple photo gallery application built with Ruby on Rails and integrated with Cloudinary for image storage and management. This project allows users to upload, view, edit, and delete photos, with images stored securely on Cloudinary's free tier.
 
- Ruby on Rails Project:
- # ✅ Todo with Turbo
+🚀 Features
+- Upload photos with titles, descriptions, and tags.
+- Store and retrieve images using Cloudinary.
+- Responsive design for optimal viewing on all devices.
+- Edit and delete existing photos.
+- Display photo metadata, including tags and descriptions.
 
-A **real-time Todo app** built with **Rails 8**, **Turbo Streams**, and **Hotwire**, inspired by [this tutorial](https://jaythree.medium.com/build-a-real-time-todo-list-with-rails-8-and-turbo-streams-4818faa28c4d). This app demonstrates how to use Turbo Streams to dynamically update a list of tasks without any frontend JavaScript.
-
-Live updates happen **automatically** across multiple sessions when new tasks are added, updated, or deleted — thanks to Turbo Streams and Turbo Frames.
-
----
+🛠️ Tech Stack
+- Backend: Ruby on Rails
+- Frontend: HTML, CSS.
+- Image Storage: Cloudinary
+- Database: PostgreSQL 
+- Testing: RSpec, FactoryBot
 
 ## 📸 Screenshots
 
-### 🏠 Homepage (Add Todo)
-![Homepage](./screenshots/home.png)
-### 📝 Completed Todo
-![Complete](./screenshots/complete.png)
-### ✅ Deleted a Todo
-![Delete](./screenshots/delete.png)
+### 🏠 Gallery
+![Homepage](./screenshots/gallery.png)
+### 📝 Add new Photo to gallery
+![New](./screenshots/new.png)
+### ✅ Edit a photo
+![Edit](./screenshots/edit.png)
+### Display a photo
+![Photo](./screenshots/photo.png)
 
-## Built With
 
-- Ruby
-- Rails 8
-- RSpec
-- Postgres
+🔧 Installation
+Clone the repository:git clone https://github.com/Adewunmi97/Gallery.git
+cd Gallery
+Install dependencies:bundle install
+Set up the database:rails db:create, rails db:migrate
+Configure Cloudinary:
+Add the cloudinary gem to your Gemfile:
+gem 'cloudinary'
+Run bundle install to install the gem.
 
----
-
-## ✨ Features
-
-- 📄 Create, update, and delete todo items
-- ⚡ Real-time UI updates using Turbo Streams
-- ✅ Mark todos as `complete` or `incomplete`
-- 🧪 RSpec test suite with controller and system tests
-- 🎨 Clean and minimal layout using Rails built-in views
-- 🚀 Rails 8, Turbo, and Importmaps (no Webpacker)
-
----
-
-## 🛠 Tech Stack
-
-- Ruby on Rails 8
-- Turbo (Hotwire)
-- Stimulus (optional controller for form reset)
-- PostgreSQL
-- RSpec + Capybara for testing
-
----
-
-## 📦 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Adewunmi97/Todo_with_turbo.git
-   cd Todo_with_turbo
-Install dependencies: bundle install
-
-Set up the database: bin/rails db:setup
-
-Start the Rails server: bin/dev
-(Make sure you have foreman installed if using Procfile.dev.)
-
-Open the app in your browser: http://localhost:3000
+Create a Cloudinary initializer at config/initializers/cloudinary.rb:
+Cloudinary.config do |config|
+  config.cloud_name = Rails.application.credentials.dig(:cloudinary, :cloud_name)
+  config.api_key = Rails.application.credentials.dig(:cloudinary, :api_key)
+  config.api_secret = Rails.application.credentials.dig(:cloudinary, :api_secret)
+  config.secure = true
+  config.cdn_subdomain = true
+end
+Store your Cloudinary credentials securely using Rails credentials:
+EDITOR="code --wait" rails credentials:edit
+Add the following:
+cloudinary:
+  cloud_name: your_cloud_name
+  api_key: your_api_key
+  api_secret: your_api_secret
+Update config/storage.yml to include Cloudinary:
+cloudinary:
+  service: Cloudinary
+Set Active Storage to use Cloudinary in config/environments/development.rb and config/environments/production.rb:
+config.active_storage.service = :cloudinary
+Start the Rails server:rails server
+Visit http://localhost:3000 to view the application.
 
 🧪 Running Tests
-This app uses RSpec for unit, controller, and system tests.
 To run the test suite: bundle exec rspec
-Make sure your test database is set up: RAILS_ENV=test bin/rails db:create db:migrate
-
-🔄 Live Turbo Stream Updates
-Turbo Streams automatically broadcasts changes to todos via ActionCable. You can open the app in two tabs and observe:
-- Adding a todo updates both tabs in real time
-- Marking a task as complete/incomplete updates instantly
-- Deleting a todo removes it from all clients
-This is possible without writing any custom JavaScript — thanks to Turbo!
+Ensure that all tests pass to confirm the application is functioning correctly.
 
 
-🚧 Future Improvements
-- Add due dates or priority
-- User authentication with Devise
-- Drag-and-drop to reorder tasks
-- Filters for all, complete, incomplete
+📚 Resources
+Build a Photo Gallery in Rails with Cloudinary (Free Tier) - Medium
+Cloudinary Documentation
+Ruby on Rails Guides
+
+
+## Video Presentation
+
+[Loom Link](https://www.loom.com/share/9d4a565f2ebb4519a52cbb7725e88aff?sid=0b01cd28-acb7-40e7-8a31-8ebbc1062320)
+
+🤝 Contributing
+Contributions are welcome! To contribute:
+Fork the repository.
+Create a new branch: git checkout -b feature/your-feature-name
+Make your changes and commit them: git commit -m 'Add your feature'
+Push to the branch: git push origin feature/your-feature-name
+Open a pull request.
 
 👤 Author
 Adewunmi A.
 📫 @Adewunmi97
 
-
-## Video Presentation
-
-[Loom Link](https://www.loom.com/share/97bbca025dba42bb97db73fce492abfb?sid=d79610ac-3142-416f-ba21-d97dbf61a673)
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
 ## Acknowledgments
 
 - Juwon Oluwadare
-- Project idea by [J3 on Medium](https://jaythree.medium.com/build-a-real-time-todo-list-with-rails-8-and-turbo-streams-4818faa28c4d)
+- Project idea by [Antelo on Medium](https://antelo.medium.com/build-a-photo-gallery-in-rails-with-cloudinary-free-tier-0e42385c691a)
+
+
+📄 License
+This project is licensed under the MIT License.
